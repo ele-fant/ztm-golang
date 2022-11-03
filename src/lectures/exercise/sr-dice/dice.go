@@ -23,7 +23,56 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func roll_dice(sides int) int {
+	return rand.Intn(sides) + 1
+}
 
 func main() {
+	rand.Seed(time.Now().UnixNano())
+
+	numRolls := 10
+	numSides := 6
+	numDice := 2
+
+	for i := 1; i <= numRolls; i++ {
+		fmt.Println("Roll number:", i)
+		sum := 0
+
+		for j := 1; j <= numDice; j++ {
+			roll := roll_dice(numSides)
+			fmt.Println("... dice number", j, "=", roll)
+			sum += roll
+		}
+
+		fmt.Println("Sum of dice:", sum)
+
+		switch sum := sum; {
+		case sum == 2 && i == 2:
+			fmt.Println("Snake Eyes!")
+		case i == 7:
+			fmt.Println("Lucky 7!")
+		case i%2 == 0:
+			fmt.Println("Even!")
+		case i%2 != 0:
+			fmt.Println("Odd!")
+		}
+
+		fmt.Println()
+
+	}
+	//* Print the sum of the dice roll
+	//* Print additional information in these cirsumstances:
+
+	//* The program must use variables to configure:
+	//  - number of times to roll the dice
+	//  - number of dice used in the rolls
+	//  - number of sides of all the dice (6-sided, 10-sided, etc determined
+	//    with a variable). All dice must use the same variable for number
+	//    of sides, so they all have the same number of sides.
 }
