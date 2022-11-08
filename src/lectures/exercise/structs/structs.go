@@ -41,10 +41,10 @@ func length(r Rectangle) float64 {
 	return math.Abs(r.B.Y - r.A.Y)
 }
 
-func lineLength(a Point, b Point) float64 {
-	l := math.Sqrt(math.Pow((b.Y-a.Y), 2) + math.Pow((b.X-a.X), 2))
-	return l
-}
+//func lineLength(a Point, b Point) float64 {
+//	l := math.Sqrt(math.Pow((b.Y-a.Y), 2) + math.Pow((b.X-a.X), 2))
+//	return l
+//}
 
 func area(r Rectangle) float64 {
 	//p1 := Point{
