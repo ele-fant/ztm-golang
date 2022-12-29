@@ -174,3 +174,5 @@ type FieldCycleFdcicInput struct {
 	MeasuredSOC                 float64                      `json:"measured_soc"`
 	Audited                     bool                         `json:"audited"`
 }
+/*
+1 lbs / acre
