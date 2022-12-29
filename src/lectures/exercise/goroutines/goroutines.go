@@ -60,10 +60,10 @@ func main() {
 	}
 
 	for _, file := range files {
-		addToSum(file)
+		go addToSum(file)
 	}
 
-	time.Sleep(1000 * time.Millisecond)
+	time.Sleep(300 * time.Millisecond)
 
 	fmt.Println("Sum total:", sum)
 }
